@@ -118,14 +118,14 @@ public final class Tools {
 
     public static final Gson GLOBAL_GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public static final String URL_HOME = "https://wiki.angelauramc.dev";
+    public static final String URL_HOME = "https://wiki.chromite.netlify.app";
     public static String NATIVE_LIB_DIR;
     public static String DIR_DATA; //Initialized later to get context
     public static File DIR_CACHE;
     public static String MULTIRT_HOME;
     public static String LOCAL_RENDERER = null;
     public static int DEVICE_ARCHITECTURE;
-    public static final String LAUNCHERPROFILES_RTPREFIX = "amethyst://";
+    public static final String LAUNCHERPROFILES_RTPREFIX = "chromite://";
 
     // New since 3.3.1
     public static String DIR_ACCOUNT_NEW;
