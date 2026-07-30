@@ -1,4 +1,3 @@
-```yaml
 name: Android CI
 
 on:
@@ -81,4 +80,3 @@ jobs:
         with:
           name: app-release
           path: out/app-release.*
-```
