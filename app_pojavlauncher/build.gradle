@@ -93,7 +93,7 @@ android {
             keyAlias "androiddebugkey"
             keyPassword "android"
         }
-    
+
         customRelease {
             if (gplayPass != null && !gplayPass.trim().isEmpty() && gplayKeystoreFile.exists()) {
                 storeFile gplayKeystoreFile
@@ -102,14 +102,14 @@ android {
                 keyPassword gplayPass
             } else {
                 logger.warn("BUILD: No release keystore found, using debug keystore.")
-    
+
                 storeFile file("debug.keystore")
                 storePassword "android"
                 keyAlias "androiddebugkey"
                 keyPassword "android"
             }
         }
-    
+
         googlePlayBuild {
             if (gplayPass != null && !gplayPass.trim().isEmpty() && file("upload.jks").exists()) {
                 storeFile file("upload.jks")
@@ -151,18 +151,20 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        
+
             if (gplayPass != null && !gplayPass.trim().isEmpty() && gplayKeystoreFile.exists()) {
                 signingConfig signingConfigs.customRelease
             } else {
                 signingConfig signingConfigs.customDebug
             }
-        
+
             resValue "string", "app_name", "Amethyst"
             resValue "string", "app_short_name", "Amethyst"
             resValue 'string', 'storageProviderAuthorities', 'org.angelauramc.amethyst.scoped.gamefolder'
             resValue 'string', 'application_package', 'org.angelauramc.amethyst'
         }
+    }
+}
 
 afterEvaluate {
     // Explicit dependencies for which the apk relies on
@@ -205,5 +207,4 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 
     implementation "net.java.dev.jna:jna:5.14.0@aar"
-
 }
