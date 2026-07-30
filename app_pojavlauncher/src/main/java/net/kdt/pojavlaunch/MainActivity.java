@@ -299,7 +299,7 @@ public class MainActivity extends BaseActivity implements ControlButtonMenuListe
                             ? LauncherPreferences.PREF_DEFAULTCTRL_PATH
                             : Tools.CTRLMAP_PATH + "/" + minecraftProfile.controlFile);
         } catch (IOException e) {
-            ...
+            Tools.showError(this, e);
         }
     
         mDrawerPullButton.setVisibility(
